@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-center mb-4">Select an Oil Company</h2>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card card-company text-center p-3 mb-3" onclick="location.href='{{ url_for('company_form', company_name='ioc') }}';">
+            {% if logos['IOC'].startswith('data:image') %}
+                <img src="{{ logos['IOC'] }}" alt="IOC Logo" class="company-logo mx-auto">
+            {% else %}
+                <img src="{{ logos['IOC'] }}" alt="IOC Logo" class="company-logo mx-auto">
+            {% endif %}
+            <h4>Indian Oil (IOC)</h4>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card card-company text-center p-3 mb-3" onclick="location.href='{{ url_for('company_form', company_name='bpcl') }}';">
+            <img src="{{ logos['BPCL'] }}" alt="BPCL Logo" class="company-logo mx-auto">
+            <h4>Bharat Petroleum (BPCL)</h4>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card card-company text-center p-3 mb-3" onclick="location.href='{{ url_for('company_form', company_name='hpcl') }}';">
+            <img src="{{ logos['HPCL'] }}" alt="HPCL Logo" class="company-logo mx-auto">
+            <h4>Hindustan Petroleum (HPCL)</h4>
+        </div>
+    </div>
+</div>
+<div class="mt-4 text-center">
+    {% if session.username == 'salish' %}
+        <a href="{{ url_for('admin_panel') }}" class="btn btn-info">Go to Admin Panel</a>
+    {% endif %}
+</div>
+{% endblock %}

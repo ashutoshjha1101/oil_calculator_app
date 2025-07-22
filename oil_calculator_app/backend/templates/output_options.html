@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-center mb-4">Excel File Generated!</h2>
+<div class="card p-4 text-center">
+    <p class="lead">Your calculation result has been saved as:</p>
+    <p><strong>{{ file_name }}</strong></p>
+    <div class="mt-4">
+        <a href="{{ url_for('download_file', file_name=file_name) }}" class="btn btn-primary mr-2">Download File</a>
+        <a href="{{ url_for('delete_file', file_name=file_name) }}" class="btn btn-danger mr-2">Delete from Server</a>
+        <a href="{{ url_for('company_selection') }}" class="btn btn-secondary">Do another calculation</a>
+    </div>
+</div>
+{% endblock %}

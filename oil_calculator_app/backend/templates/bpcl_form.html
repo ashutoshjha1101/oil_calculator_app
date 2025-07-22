@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-center mb-4">Bharat Petroleum (BPCL) Calculation</h2>
+<form method="POST">
+    <div class="form-group">
+        <label for="bpcl_option">Select BPCL Option:</label>
+        <select class="form-control" id="bpcl_option" name="bpcl_option" required>
+            <option value="">-- Select an Option --</option>
+            <option value="option1">OPTION 1: L/S USD 3.450 MILL BSS 1:2 NEW MANGALORE F/B HALDIA (GEO ROTATION ONLY)</option>
+            <option value="option2">OPTION 2: L/S USD 3.430 MILL BSS 1:2 STS DHAMRA F/B HALDIA (GEO ROTATION ONLY)</option>
+            <option value="option3">OPTION 3: L/S USD 3.280 MILL BSS 1:2 NEW MANGALORE + KRISHNAPATNAM (ROTATION IN CHOPTN)</option>
+            <option value="option4">OPTION 4: L/S USD 2.860 MILL BSS 1:2 NEW MANGALORE + DAHEJ (ROTATION IN CHOPTN)</option>
+            <option value="option5">OPTION 5: L/S USD 2.790 MILL BSS 1:2 NEW MANGALORE + MUMBAI (ROTATION IN CHOPTN)</option>
+            <option value="option6">OPTION 6: L/S USD 2.770 MILL BSS 1:2 NEW MANGALORE + MUNDRA (ROTATION IN CHOPTN)</option>
+        </select>
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="choption" name="choption">
+        <label class="form-check-label" for="choption">CHOPTION</label>
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="geo_rotation" name="geo_rotation">
+        <label class="form-check-label" for="geo_rotation">GEO ROTATION</label>
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="full_discharge" name="full_discharge">
+        <label class="form-check-label" for="full_discharge">FULL DISCHARGE</label>
+    </div>
+    <div class="form-group">
+        <label for="time_zones">Time Zones:</label>
+        <input type="text" class="form-control" id="time_zones" name="time_zones">
+    </div>
+    <div class="form-group">
+        <label for="speed_cons">Speed & Cons:</label>
+        <input type="text" class="form-control" id="speed_cons" name="speed_cons">
+    </div>
+    <p class="mt-3">Demurrage: $57,000 PDPR (Fixed for BPCL)</p>
+    <button type="submit" class="btn btn-success">Calculate & Generate Excel</button>
+</form>
+{% endblock %}

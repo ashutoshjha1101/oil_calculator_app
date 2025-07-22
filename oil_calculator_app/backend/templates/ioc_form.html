@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-center mb-4">Indian Oil (IOC) Calculation</h2>
+<form method="POST">
+    <div class="form-group">
+        <label for="base_rate">Base Rate (USD):</label>
+        <input type="number" step="1" class="form-control" id="base_rate" name="base_rate" required>
+    </div>
+    <div class="form-group">
+        <label for="ioc_ports">Select Ports (Hold Ctrl/Cmd to select multiple):</label>
+        <select multiple class="form-control" id="ioc_ports" name="ioc_ports">
+            <option value="India">Any One Port India</option>
+            <option value="Haldia">Haldia</option>
+            <option value="Vizag">Vizag</option>
+            <option value="Paradip">Paradip</option>
+            <option value="Ennore">Ennore</option>
+            <option value="West Coast India">West Coast India</option>
+            </select>
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="choption" name="choption">
+        <label class="form-check-label" for="choption">CHOPTION</label>
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="geo_rotation" name="geo_rotation">
+        <label class="form-check-label" for="geo_rotation">GEO ROTATION</label>
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="full_discharge" name="full_discharge">
+        <label class="form-check-label" for="full_discharge">FULL DISCHARGE</label>
+    </div>
+    <div class="form-group">
+        <label for="time_zones">Time Zones:</label>
+        <input type="text" class="form-control" id="time_zones" name="time_zones">
+    </div>
+    <div class="form-group">
+        <label for="speed_cons">Speed & Cons:</label>
+        <input type="text" class="form-control" id="speed_cons" name="speed_cons">
+    </div>
+
+    <button type="submit" class="btn btn-success">Calculate & Generate Excel</button>
+</form>
+{% endblock %}

@@ -1,0 +1,15 @@
+body {
+    background-color: #f8f9fa;
+}
+.card-company {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+.card-company:hover {
+    transform: scale(1.03);
+}
+.company-logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-center mb-4">Admin Panel - Generated Files</h2>
+{% if files %}
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for file in files %}
+        <tr>
+            <td>{{ file }}</td>
+            <td>
+                <a href="{{ url_for('download_file', file_name=file) }}" class="btn btn-sm btn-primary">Download</a>
+                <a href="{{ url_for('delete_file', file_name=file) }}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this file?')">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-info text-center">No Excel files generated yet.</div>
+{% endif %}
+<div class="mt-4 text-center">
+    <a href="{{ url_for('company_selection') }}" class="btn btn-secondary">Back to Company Selection</a>
+</div>
+{% endblock %}
