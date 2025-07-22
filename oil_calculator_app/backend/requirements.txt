@@ -1,5 +1,5 @@
 Flask==2.3.2
-pandas==2.0.3  # Changed from 2.2.2 to a more stable older version
-openpyxl==3.0.10 # Changed from 3.1.2 to a very common stable version
+pandas==1.5.3  # Changed from 2.0.3 to a very stable 1.x version
+openpyxl==3.0.10
 gunicorn
 Werkzeug==2.3.7
